@@ -116,7 +116,7 @@ if (isset($_SESSION['userid'])) {
     var vehicleNumber = $("#vehicleNumber").val();
 
     $.ajax({
-      url: "https://scanty-shoe.000webhostapp.com/roadapp/getinfo.php",
+      url: "https://scanty-shoe.000webhostapp.com/roadapp/getinfofine.php",
       type: "GET",
       dataType: "json",
       data: { vehicleNumber: vehicleNumber },
@@ -177,12 +177,7 @@ if (isset($_SESSION['userid'])) {
         dataType: "json",
         data: {finearr:finearr,vehicleNumber:vehicleNumber,voucher_no:voucher_no},
         success: function(response) {
-        if (response.success) {
-
-          $("#status").html(response);
-        } else {
-
-        }
+     console.log(response);
         },
         error: function() {
 
