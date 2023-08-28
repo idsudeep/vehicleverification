@@ -82,7 +82,7 @@ if (isset($_SESSION['userid'])) {
   <div class="d-flex justify-content-center align-items-center" >
     <div class="col-sm-7">
     <span style="color:green;"><?php if(isset($_GET['alert'])){ echo '<h5?>'.$_GET['alert'].'</h5>';} ?></span>
-<legend style="margin-left: 60px; color:purple; margin-top:20px;">Check Vehicle Detail</legend>
+<legend style="margin-left: 60px; color:purple; margin-top:20px;">Check Vehicle Detail <span id="status"></span></legend>
 
 <hr>
 <form>
@@ -179,6 +179,7 @@ if (isset($_SESSION['userid'])) {
         success: function(response) {
         if (response.success) {
 
+          $("#status").html(response);
         } else {
 
         }
